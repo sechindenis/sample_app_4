@@ -174,25 +174,35 @@ input {
     color: $state-danger-text;
   }
 }
+.checkbox {
+  margin-top: -5px;
+  margin-bottom: 20px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
 
 
 
-/* динамическая кнопка */
-$color: rgb(51, 122, 183);
 
-.button {
+
+/* заполняющаяся динамическая кнопка */
+.button_my {
+  background-color: transparent;
+  border-color: transparent;
   
-  // одна строчка, отмена подчеркивания ссылки
   text-decoration: none !important;
- 
   display: inline-block;
-	padding: .75rem 1.25rem;
-	border-radius: 10rem;
+	padding: 6px 12px;
+	border-radius: 4px;
 	color: #fff;
+  font-size: 1.8rem;
   
-	font-size: 2rem;
-
-  font-weight: 350;
 	// letter-spacing: .15rem;
 	transition: all .3s;
 	position: relative;
@@ -205,7 +215,7 @@ $color: rgb(51, 122, 183);
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: $color;
+		// background-color: #27ae60;
 		border-radius: 10rem;
 		z-index: -2;
 	}
@@ -216,7 +226,7 @@ $color: rgb(51, 122, 183);
 		left: 0;
 		width: 0%;
 		height: 100%;
-		background-color: darken($color, 15%);
+		// background-color: darken(#27ae60, 15%);
 		transition: all .7s;
 		border-radius: 10rem;
 		z-index: -1;
@@ -227,4 +237,137 @@ $color: rgb(51, 122, 183);
 			width: 100%;
 		}
 	}
+  // зеленая
+  &.green{
+    &.wider{
+      width: 100%;
+      font-weight: 450;
+    }
+    &.tighter{
+      @media (max-width: 800px){
+        width: 40%;
+      }
+      width: 30%;
+      font-weight: 350;
+    }
+    margin-top: -12px;
+    &:after {
+		  background-color:#27ae60;
+		}
+	  &:before {
+			background-color: darken(#27ae60, 15%);
+		}
+
+	}
+  // синяя
+  &.blue{
+    &.wider{
+      width: 100%;
+      font-weight: 450;
+    }
+    &.tighter{
+      @media (max-width: 800px){
+        width: 40%;
+      }
+      width: 30%;
+      font-weight: 350;
+    }
+    &:after {
+		  background-color: #347ab7;
+		}
+	  &:before {
+			background-color: darken(#347ab7, 15%);
+		}
+	}
+}
+
+
+
+
+/* две скользящие кнопки */
+.slider_button{
+.group {
+  a:hover {
+    color: #ffffff; /* Цвет посещённой ссылки */
+  } 
+  width: 340px;
+  height: 40px;
+  padding: 10px 40px;
+  line-height: 40px;
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  
+}
+.one {
+  font-size: 2rem;
+  font-weight: 450;
+  
+  float: left;
+  line-height: 40px;
+  color: white;
+  text-decoration: none !important;
+  transition: 1.0s;
+}
+.two {
+  font-size: 2rem;
+  font-weight: 450;
+
+  float: right;
+  text-decoration: none !important;
+  line-height: 40px;
+  color: #000000;
+}
+.bg {
+  background-color: #347ab7;
+  
+  height: 60px;
+  width: 205px;
+  position: absolute;
+  top: 0;
+  margin-left: -260px;
+  z-index: -1;
+  transition: 1.0s;
+  border-radius: 30px;
+  
+}
+
+span:hover + .bg {
+  
+  width: 200px;
+  margin-left: -70px;
+  background: #27ae60;
+}
+
+.two > span:hover {
+  
+  color: white;
+}
+
+.two:hover ~ .one {
+  
+  color:rgb(0, 0, 0);
+}
+span {
+  
+  padding: 10px 0;
+  transition: 1.0s;
+}
+
+}
+
+
+/* Расставляет элементы в один ряд */
+.inliner{
+  display: inline;
+}
+
+
+/* Прозрачная кнопка */
+.btn-primary-1{
+  background-color: transparent;
+  color: transparent;
+  text-decoration: none !important;
 }

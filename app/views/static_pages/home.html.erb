@@ -7,8 +7,27 @@
     sample application.
   </h2> 
    
+  <%# Первоначальный вариант по книге %>
   <%# <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %> 
-  <%= link_to "Sign up now!", signup_path, class: "button" %>
+  
+  <%# Заполняющиеся кнопки в один ряд %>
+  <div class="inliner" >
+    <%= link_to "Sign up now!", signup_path, class: "button_my blue tighter" %> 
+    <%= link_to "Log in here! ", login_path, class: "button_my green tighter" %>
+  </div>
+  
+  
+  <%# Скользящие кнопки в один ряд %>
+  <%# <div class="slider_button">
+  <div class="group">
+    <a href=signup class="two">
+      <span>Sign up!</span>
+      <div class="bg"></div>
+      <a href=login class="one">Log in!</a>
+  </div>
+  </div> %>
+  
+
 </div>
 
 <%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200"),
