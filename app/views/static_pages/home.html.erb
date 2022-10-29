@@ -11,11 +11,10 @@
   <%# <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %> 
   
   <%# Заполняющиеся кнопки в один ряд %>
-  <div class="inliner" >
+  <% if !logged_in? %>
     <%= link_to "Sign up now!", signup_path, class: "button_my blue tighter" %> 
     <%= link_to "Log in here! ", login_path, class: "button_my green tighter" %>
-  </div>
-  
+  <% end %>
   
   <%# Скользящие кнопки в один ряд %>
   <%# <div class="slider_button">
