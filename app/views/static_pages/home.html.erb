@@ -1,20 +1,35 @@
-<div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+     <div class="col-md-8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1>Welcome to the Sample App</h1>
   
-  <h2>
-    This is the home page for the
-    <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2> 
+    <h2>
+     This is the home page for the
+      <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+      sample application.
+    </h2> 
    
   <%# Первоначальный вариант по книге %>
   <%# <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %> 
   
   <%# Заполняющиеся кнопки в один ряд %>
-  <% if !logged_in? %>
-    <%= link_to "Sign up now!", signup_path, class: "button_my blue tighter" %> 
-    <%= link_to "Log in here! ", login_path, class: "button_my green tighter" %>
-  <% end %>
+  <%= link_to "Sign up now!", signup_path, class: "button_my blue tighter" %> 
+  <%= link_to "Log in here! ", login_path, class: "button_my green tighter" %>
+  
   
   <%# Скользящие кнопки в один ряд %>
   <%# <div class="slider_button">
@@ -27,8 +42,10 @@
   </div> %>
   
 
-</div>
+  </div>
 
-<%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200"),
+  <%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200"),
 "https://rubyonrails.org/" %>
+
+<% end %>
 
